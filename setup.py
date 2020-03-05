@@ -32,15 +32,14 @@ from distutils.dir_util import copy_tree
 import os
 import shutil
 
-__author__ = "KV Thanjavur Bhaaskar, Naveen Purushotham"
+__author__ = "KV Thanjavur Bhaaskar, Naveen Purushotham ,Timothy Vales"
 __copyright__ = "Copyright 2019, Xilinx"
-__email__ = "kvt@xilinx.com, npurusho@xilinx.com"
+__email__ = "kvt@xilinx.com, npurusho@xilinx.com, timothyv@xilinx.com"
 
 # global variables
 board = os.environ['BOARD']
 repo_board_folder = f'boards/{board}/'
 board_notebooks_dir = os.environ['PYNQ_JUPYTER_NOTEBOOKS']
-overlay_dir = f'/usr/local/lib/python3.6/dist-packages/spyn/overlays'
 hw_data_files = []
 
 
@@ -54,16 +53,16 @@ def check_env():
 
 # copy notebooks to jupyter home
 def copy_notebooks():
-    src_nb_dir = os.path.join(f'', 'notebooks')
-    dst_nb_dir = os.path.join(board_notebooks_dir, 'spyn')
+    src_nb_dir = os.path.join(f'', 'notebooks') #grab from notebooks folder
+    dst_nb_dir = os.path.join(board_notebooks_dir, 'spyn') #copy notebook to spyn directory inside of board folder 
     if os.path.exists(dst_nb_dir):
         shutil.rmtree(dst_nb_dir)
     copy_tree(src_nb_dir, dst_nb_dir)
     
 # copy overlays to python package
 def copy_overlays():
-    src_ol_dir = os.path.join(repo_board_folder, '')
-    dst_ol_dir = os.path.join(overlay_dir, '')
+    src_ol_dir = os.path.join(repo_board_folder, '') #grab bit file from pynqz1 board folder
+    dst_ol_dir = os.path.join('spyn', 'bitstream') #copy bit file to bitstream folder in spyn folder
     copy_tree(src_ol_dir, dst_ol_dir)
     hw_data_files.extend([os.path.join("..", dst_ol_dir, f) for f in os.listdir(dst_ol_dir)])
 
@@ -74,11 +73,11 @@ copy_overlays()
 setup(
     name="spyn",
     version='1.1',
-    install_requires=['pynq>=2.1'],
-    url='https://github.com/npurusho/IIoT-SPYN.git',
+    install_requires=['pynq>=2.5'], #require 2.5 
+    url='https://github.com/TimothyVales/IIoT-SPYN.git', #grab from personal github
     license='BSD 3-Clause License',
     author='Xilinx ISM + PYNQ',
-    author_email='kvt@xilinx.com',
+    author_email='timothyv@xilinx.com',
     packages=find_packages(),
     package_data={
         '': hw_data_files,
