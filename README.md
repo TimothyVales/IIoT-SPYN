@@ -8,25 +8,7 @@
 
 IIoT-SPYN is intended to work with the EDDP kit. Here is the link to purchase the kit: [EDDP Kit](https://shop.trenz-electronic.de/en/TEC0053-04-K1-EDDP-Motor-Control-Kit-with-Motor-Power-Supplies?c=476)
 
-
-
-## Quick Start for Arty-Z7-10
-
-Step 1: Download the [**Arty-Z7-10 PYNQ image**](https://drive.google.com/drive/folders/1QwQBFW3YcKsnjlDYQUoqu60ja4jyn9-2?usp=sharing)
-
-Step 2: Write the image file to a SD card
-
-Step 3: Use the following command in a terminal to install IIoT-SPYN
-
-```bash
-$ sudo pip3 install --upgrade git+https://github.com/Xilinx/IIoT-SPYN.git
-$ sudo reboot now
-```
-
-After the setup, new Jupyter notebooks will be added under the spyn folder, ready to try out, no additional steps are needed.
-
-## Quick Start for Pynq-Z1 / Arty-Z7-20
-
+## Quick Start for Pynq-Z1 
 Step 1: Download the [**PYNQ image**](http://files.digilent.com/Products/PYNQ/pynq_z1_v2.1.img.zip)
 
 Step 2: Write the image file to a SD card
@@ -34,7 +16,7 @@ Step 2: Write the image file to a SD card
 Step 3: Use the following command in a terminal to install IIoT-SPYN
 
 ```bash
-$ sudo pip3 install --upgrade git+https://github.com/Xilinx/IIoT-SPYN.git
+$ sudo pip3 install --upgrade git+https://github.com/TimothyVales/IIoT-SPYN.git
 $ sudo reboot now
 ```
 
