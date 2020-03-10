@@ -34,10 +34,8 @@ After the setup, new Jupyter notebooks will be added under the spyn folder, read
 
 
 ## Supported Boards
-
-- [Arty-Z7-7020](https://store.digilentinc.com/arty-z7-apsoc-zynq-7000-development-board-for-makers-and-hobbyists/)
 - [PYNQ-Z1](https://store.digilentinc.com/pynq-z1-python-productivity-for-zynq/)
-- [Arty-Z7-7010 support added 5.11.2018](https://store.digilentinc.com/arty-z7-apsoc-zynq-7000-development-board-for-makers-and-hobbyists/)
+
 
 
 
